@@ -1,6 +1,7 @@
 package com.example.android1_md1
 
 fun main() {
+    print("Введите колличество чисел-")
     val n = readLine()?.toIntOrNull() ?: return
     var current = 0
 
@@ -17,7 +18,7 @@ fun main() {
     val sum=list.sum()
     println("Сумма= $sum")
     val map= mutableMapOf<Int,Int>()
-    set.forEach { map.put(it,nOD(it,sum))
+    set.forEach { map[it]=nOD(it,sum)
     }
     for(key in map.keys){
         println("Число <$key>, Сумма<$sum>, НОД <${map[key]}>")
@@ -31,6 +32,7 @@ fun printNumber(n: Int): List<Int> {
     val list = mutableListOf<Int>()
     var currentNumber = 1
     while (currentNumber <= n) {
+        print("Введите число-")
         val number = readLine()?.toIntOrNull()
         if (number != null) {
             list.add(number)
