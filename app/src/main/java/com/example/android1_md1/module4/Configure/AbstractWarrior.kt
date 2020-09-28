@@ -16,14 +16,10 @@ abstract class AbstractWarrior(
 
     override fun attack(warrior: InterfaceWarrior) {
         if (!weapon.needReload) {
-            weapon.cockhutter()
-            if (weapon.fireType == FireType.Single)
+            weapon.cockTheShutter().forEach {
                 if (Random.nextInt(101) < accuracy - warrior.evasion)
-                    warrior.damage(weapon.createAmmo().currentDamage(weapon.createAmmo()))
-                else for (i in 0..5)
-                    if (Random.nextInt(101) < accuracy - warrior.evasion)
-                        warrior.damage(weapon.createAmmo().currentDamage(weapon.createAmmo()))
-
+                    warrior.damage(it.currentDamage())
+            }
         } else {
             weapon.reload()
         }

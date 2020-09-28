@@ -36,13 +36,13 @@ class Battle(val team1: Team,val team2: Team) {
             for(i in 0 until team1.size){
                 team1[i].attack(team2[i])
                 team2[i].attack(team1[i])
-
+                println("${team1[i]}-${team1[i].HP} против ${team2[i]}-${team2[i].HP} ")
 
             }
         else for(i in 0 until team2.size){
             team2[i].attack(team1[i])
-
             team1[i].attack(team2[i])
+            println("${team1[i]}-${team1[i].HP} против ${team2[i]}-${team2[i].HP} ")
 
         }
         this.team2.survive()
