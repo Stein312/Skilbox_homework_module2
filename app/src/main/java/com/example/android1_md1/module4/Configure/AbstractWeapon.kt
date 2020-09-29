@@ -22,8 +22,7 @@ abstract class AbstractWeapon(val maxAmmo: Int, val fireType: FireType) {
             }
             FireType.Query -> {
                 for (i in 0..5) {
-
-                    if (needReload) {
+                    if (!needReload) {
                         newListAmmo.add(ammo.last())
                         ammo.removeAt(ammo.size - 1)
                     }

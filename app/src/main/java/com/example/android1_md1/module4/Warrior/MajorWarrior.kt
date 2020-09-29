@@ -7,7 +7,7 @@ class MajorWarrior : AbstractWarrior(
     maxHP = 250,
     evasion = 20,
     accuracy = 85,
-    weapon = Weapons().autoPistol
+    weapon = Weapons.AutoPistol()
 ) {
     override fun toString(): String {
         return "Major"

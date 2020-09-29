@@ -8,7 +8,7 @@ class GeneralWarrior:AbstractWarrior(
     maxHP=800,
     evasion=25,
     accuracy=100,
-    weapon=Weapons().rifle
+    weapon=Weapons.Rifle()
 ) {
     override fun toString():String{
         return "General"

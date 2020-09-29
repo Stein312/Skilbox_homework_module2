@@ -11,13 +11,14 @@ abstract class AbstractWarrior(
 ) : InterfaceWarrior {
     var HP = maxHP
         private set
-    override var iskilled: Boolean = false
+    override val iskilled: Boolean
+        get() = HP<=0
 
 
     override fun attack(warrior: InterfaceWarrior) {
         if (!weapon.needReload) {
             weapon.cockTheShutter().forEach {
-                if (Random.nextInt(101) < accuracy - warrior.evasion)
+                if (Random.nextInt(101) < accuracy - warrior.evasion && !warrior.iskilled)
                     warrior.damage(it.currentDamage())
             }
         } else {
@@ -27,7 +28,5 @@ abstract class AbstractWarrior(
 
     override fun damage(dmg: Int) {
         HP -= dmg
-        if (HP <= 0) iskilled = true
-
     }
 }

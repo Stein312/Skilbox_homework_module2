@@ -7,7 +7,7 @@ class SergeantWarrior : AbstractWarrior(
     maxHP = 250,
     evasion = 20,
     accuracy = 90,
-    weapon = Weapons().pistol
+    weapon = Weapons.Pistol()
 ) {
     override fun toString(): String {
         return "Sergeant"
